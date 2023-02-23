@@ -1,13 +1,16 @@
-import { Box, Button, Text } from "native-base";
+import { Box, Button, StatusBar, Text } from "native-base";
 import React from "react";
 import { SafeAreaView } from "react-native";
 
 const SignIn = (props: { navigation: any }) => {
     return(
-        <Box style={{alignItems: 'center', justifyContent: 'space-evenly', backgroundColor: '#9cffac', marginTop: 50}}>
-          <Text style={{fontSize: 40, color: '#10611d'}}>Welcome To TalentOrLuck :/</Text>
-          <Button onPress={() => props.navigation.navigate("SignUp")}>Click Me</Button>
-        </Box>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#222222'}}>
+            <StatusBar barStyle={'light-content'}></StatusBar>
+            <Box>
+                <Button onPress={() => props.navigation.navigate("SignUp")}>Click Me</Button>
+                <Text>Hello World</Text>
+            </Box>
+        </SafeAreaView>
     );
 };
 
