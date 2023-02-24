@@ -1,4 +1,4 @@
-import {Box, Button, StatusBar, Text} from 'native-base';
+import { Box, Button, CheckIcon, Icon, StatusBar, Text } from "native-base";
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import {StyledButton} from '../../components/StyledButton';

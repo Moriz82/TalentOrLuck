@@ -1,6 +1,7 @@
 import React from 'react';
-import {CheckIcon, Input} from 'native-base';
+import {CheckIcon, Icon, Input} from 'native-base';
 import {StyleSheet} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type Props = {
   placeholderText: string;
@@ -13,19 +14,22 @@ export function TextInput(props: Props) {
         base: '75%',
         md: '25%',
       }}
-      /*InputLeftElement={<CheckIcon size="5" mt="0.5" color="emerald.500" />}*/
-      placeholder="Name"
+      style={styles.root}
+      leftElement={
+        <MaterialCommunityIcons style={styles.root} name="email" color="black" size={25} />
+      }
+      placeholder={props.placeholderText}
     />
   );
 }
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: '#005B04',
+    backgroundColor: '#F7F8F9',
     borderRadius: 8,
-    height: 56,
+    boxSizing: 'border-box',
   },
-  buttonText: {
+  placeholderText: {
     color: 'rgb(255, 255, 255)',
     fontSize: 15,
     fontWeight: '700',
