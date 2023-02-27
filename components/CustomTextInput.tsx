@@ -13,7 +13,7 @@ export function CustomTextInput(props: Props) {
   return (
     <View style={{borderRadius: 10, flexDirection: 'row', backgroundColor: 'white', padding: 10, justifyContent: 'space-between'}}>
       <MaterialCommunityIcons name="email" color="gray" size={25} style={{paddingRight: 5}}/>
-      <TextInput style={{flex: 1, height: 30}} placeholder={'Email'} defaultValue={props.value} onChangeText={props.onChangeText}></TextInput>
+      <TextInput style={{flex: 1, height: 30, fontFamily: 'Urbanist'}} placeholder={'Email'} defaultValue={props.value} onChangeText={props.onChangeText} placeholderTextColor={'gray'}></TextInput>
     </View>
   );
 }
