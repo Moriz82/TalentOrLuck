@@ -13,7 +13,7 @@ const SignIn = (props: {navigation: any}) => {
       <Box style={{padding: 10}}>
         <StyledButton
           onPress={() => props.navigation.navigate('SignUp')}
-          buttonText={'Click Me'}
+          buttonText={'Sign Up'}
         />
         <CustomTextInput placeholderText={'Test'} value={emailText} onChangeText={(newText: any) => setEmailText(newText)}/>
         <Text>{emailText}</Text>
