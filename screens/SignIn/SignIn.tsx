@@ -11,7 +11,7 @@ const SignIn = (props: {navigation: any}) => {
       <Box>
         <StyledButton
           onPress={() => props.navigation.navigate('SignUp')}
-          buttonText={'Click Me'}
+          buttonText={'Sign Up'}
         />
         <TextInput placeholderText={'Test'} />
         <Text>Hello World</Text>
