@@ -1,25 +1,67 @@
-import { Box, Button, CheckIcon, Icon, StatusBar, Text } from "native-base";
-import React, { useState } from 'react';
+import {Box, StatusBar, Text, View} from 'native-base';
+import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
 import {StyledButton} from '../../components/StyledButton';
-import { CustomTextInput } from "../../components/CustomTextInput";
+import {CustomTextInput} from '../../components/CustomTextInput';
+import signInStyles from './SignIn.styles';
+import {CustomLinkedText} from '../../components/CustomLinkedText';
 
 const SignIn = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState();
+  const [passwordText, setPasswordText] = useState();
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#222222'}}>
+    <SafeAreaView style={signInStyles.safeAreaViewStyle}>
       <StatusBar barStyle={'light-content'} />
       <Box style={{padding: 10}}>
+        <Text style={signInStyles.headerText}>Welcome Back!</Text>
+
+        <View style={signInStyles.emailTextInput}>
+          <CustomTextInput
+            placeholderText={'Enter Email'}
+            value={emailText}
+            onChangeText={(newText: any) => setEmailText(newText)}
+            iconName={'email'}
+            isPassword={false}
+          />
+        </View>
+
+        <View style={signInStyles.passwordTextInput}>
+          <CustomTextInput
+            placeholderText={'Enter Password'}
+            value={passwordText}
+            onChangeText={(newText: any) => setPasswordText(newText)}
+            iconName={'lock'}
+            isPassword={true}
+          />
+        </View>
+
+        <View style={signInStyles.forgotPasswordText}>
+          <CustomLinkedText
+            displayText={'Forgot Pasword?'}
+            onPress={props.navigation.navigate('ForgotPassword')}
+          />
+        </View>
+
         <StyledButton
-          onPress={() => props.navigation.navigate('SignUp')}
-          buttonText={'Sign Up'}
+          onPress={() => props.navigation.navigate('Login')}
+          buttonText={'Login'}
         />
-        <CustomTextInput placeholderText={'Test'} value={emailText} onChangeText={(newText: any) => setEmailText(newText)}/>
-        <Text>{emailText}</Text>
+
+        <View style={signInStyles.registerNowText}>
+          <CustomLinkedText
+            displayText={'Register Now'}
+            onPress={() => props.navigation.navigate('SignUp')}
+          />
+        </View>
       </Box>
     </SafeAreaView>
   );
 };
+
+/*<StyledButton
+  onPress={() => props.navigation.navigate('SignUp')}
+  buttonText={'Sign Up'}
+/>*/
 
 export default SignIn;

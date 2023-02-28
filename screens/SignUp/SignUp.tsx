@@ -1,26 +1,57 @@
-import {Box, Button, StatusBar, Text} from 'native-base';
-import React, { useState } from 'react';
-import {SafeAreaView, TextInputBase} from 'react-native';
-import { CustomTextInput } from "../../components/CustomTextInput";
-
-// ZANE IS WORKING ON THIS
-// line height and height to fix labels
+import {Box, StatusBar, Text, View} from 'native-base';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native';
+import {StyledButton} from '../../components/StyledButton';
+import {CustomTextInput} from '../../components/CustomTextInput';
+import signInStyles from './SignUp.styles';
 
 const SignUp = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState();
+  const [passwordText, setPasswordText] = useState();
+  const [confirmPasswordText, setConfirmPasswordText] = useState();
 
   return (
-    <><Box>
-      <Text>Sign Up Screen</Text>
-    </Box><>
-        <SafeAreaView style={{ backgroundColor: '#222222', flex: 1 }}>
-          <Text style={{ fontSize: 25, paddingTop: 100 }}>Hello! Register to get started</Text>
+    <SafeAreaView style={signInStyles.safeAreaViewStyle}>
+      <StatusBar barStyle={'light-content'} />
+      <Box style={{padding: 10}}>
+        <Text style={signInStyles.headerText}>Hello! Please Register</Text>
 
-          <Box style={{ justifyContent: 'space-evenly', paddingTop: 20, alignItems: 'center' }}>
-            <CustomTextInput placeholderText={'Test'} value={emailText} onChangeText={(newText: any) => setEmailText(newText)} />
-          </Box>
-        </SafeAreaView>
-      </></>
+        <View style={signInStyles.emailTextInput}>
+          <CustomTextInput
+            placeholderText={'Enter Email'}
+            value={emailText}
+            onChangeText={(newText: any) => setEmailText(newText)}
+            iconName={'email'}
+            isPassword={false}
+          />
+        </View>
+
+        <View style={signInStyles.passwordTextInput}>
+          <CustomTextInput
+            placeholderText={'Enter Password'}
+            value={passwordText}
+            onChangeText={(newText: any) => setPasswordText(newText)}
+            iconName={'lock'}
+            isPassword={true}
+          />
+        </View>
+
+        <View style={signInStyles.passwordTextInput}>
+          <CustomTextInput
+            placeholderText={'Confirm Password'}
+            value={confirmPasswordText}
+            onChangeText={(newText: any) => setConfirmPasswordText(newText)}
+            iconName={'lock'}
+            isPassword={true}
+          />
+        </View>
+
+        <StyledButton
+          onPress={() => props.navigation.navigate('Register')}
+          buttonText={'Register'}
+        />
+      </Box>
+    </SafeAreaView>
   );
 };
 
