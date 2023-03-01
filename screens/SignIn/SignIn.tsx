@@ -5,6 +5,7 @@ import {StyledButton} from '../../components/StyledButton';
 import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignIn.styles';
 import {CustomLinkedText} from '../../components/CustomLinkedText';
+import { ThirdPartyLoginButton } from '../../components/ThirdPartyLoginButton';
 
 const SignIn = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState();
@@ -53,6 +54,11 @@ const SignIn = (props: {navigation: any}) => {
             displayText={'Register Now'}
             onPress={() => props.navigation.navigate('SignUp')}
           />
+
+          <View style={{flexDirection: 'row', justifyContent: 'space-around', flex: 1, paddingTop: 20}}>
+            <ThirdPartyLoginButton logoImage={require('../../assets/images/facebookLogo.png')} onPress={() => {}}/>
+            <ThirdPartyLoginButton logoImage={require('../../assets/images/googleLogo.png')} onPress={() => {}}/>
+          </View>
         </View>
       </Box>
     </SafeAreaView>
