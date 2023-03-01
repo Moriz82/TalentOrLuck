@@ -5,11 +5,12 @@ import {StyledButton} from '../../components/StyledButton';
 import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignIn.styles';
 import {CustomLinkedText} from '../../components/CustomLinkedText';
-import { ThirdPartyLoginButton } from '../../components/ThirdPartyLoginButton';
+import {ThirdPartyLoginButton} from '../../components/ThirdPartyLoginButton';
+import SignInCheck from './SignInBack';
 
 const SignIn = (props: {navigation: any}) => {
-  const [emailText, setEmailText] = useState();
-  const [passwordText, setPasswordText] = useState();
+  const [emailText, setEmailText] = useState('');
+  const [passwordText, setPasswordText] = useState('');
 
   return (
     <SafeAreaView style={signInStyles.safeAreaViewStyle}>
@@ -39,13 +40,13 @@ const SignIn = (props: {navigation: any}) => {
 
         <View style={signInStyles.forgotPasswordText}>
           <CustomLinkedText
-            displayText={'Forgot Pasword?'}
+            displayText={'Forgot Password?'}
             onPress={props.navigation.navigate('ForgotPassword')}
           />
         </View>
 
         <StyledButton
-          onPress={() => props.navigation.navigate('Login')}
+          onPress={() => console.log(SignInCheck(emailText, passwordText))}
           buttonText={'Login'}
         />
 
@@ -55,9 +56,21 @@ const SignIn = (props: {navigation: any}) => {
             onPress={() => props.navigation.navigate('SignUp')}
           />
 
-          <View style={{flexDirection: 'row', justifyContent: 'space-around', flex: 1, paddingTop: 20}}>
-            <ThirdPartyLoginButton logoImage={require('../../assets/images/facebookLogo.png')} onPress={() => {}}/>
-            <ThirdPartyLoginButton logoImage={require('../../assets/images/googleLogo.png')} onPress={() => {}}/>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              flex: 1,
+              paddingTop: 20,
+            }}>
+            <ThirdPartyLoginButton
+              logoImage={require('../../assets/images/facebookLogo.png')}
+              onPress={() => {}}
+            />
+            <ThirdPartyLoginButton
+              logoImage={require('../../assets/images/googleLogo.png')}
+              onPress={() => {}}
+            />
           </View>
         </View>
       </Box>

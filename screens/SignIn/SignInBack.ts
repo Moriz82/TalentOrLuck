@@ -1,11 +1,11 @@
 var database: any = {
-  'email@email.com': {
+  'email': {
     email: 'email@email.com',
     password: 'password',
   },
 };
 
-function SignIn(email: string, password: string): boolean {
+function SignInCheck(email: string, password: string): boolean {
   if (database.hasOwnProperty(email)) {
     if (database[email].password === password) {
       return true;
@@ -14,4 +14,4 @@ function SignIn(email: string, password: string): boolean {
   return false;
 }
 
-export default SignIn;
+export default SignInCheck;
