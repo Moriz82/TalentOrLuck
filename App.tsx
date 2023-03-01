@@ -7,7 +7,7 @@ import SignUp from './screens/SignUp/SignUp';
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
-  const [userEmail, setEmailText] = useState('');
+  const [username, setUsername] = useState('');
 
   // const colorTheme = {
   //   brand: {
