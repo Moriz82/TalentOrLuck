@@ -14,11 +14,14 @@ const signUpStyles = StyleSheet.create({
     paddingTop: 30,
   },
   passwordTextInput: {
+  confirmPassInput: {
     paddingTop: 30,
     paddingBottom: 30,
   },
   forgotPasswordText: {
     paddingBottom: 30,
+  passwordInput: {
+    paddingTop: 30,
   },
   registerNowText: {
     paddingTop: 30,
