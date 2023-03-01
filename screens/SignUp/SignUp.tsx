@@ -1,7 +1,7 @@
 import {Box, StatusBar, Text, View} from 'native-base';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
-import {StyledButton} from '../../components/StyledButton';
+import {StyledButton} from '../../components/StyledButton'
 import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignUp.styles';
 
@@ -27,6 +27,7 @@ const SignUp = (props: {navigation: any}) => {
         </View>
 
         <View style={signInStyles.passwordTextInput}>
+        <View style={signInStyles.passwordInput}>
           <CustomTextInput
             placeholderText={'Enter Password'}
             value={passwordText}
@@ -37,6 +38,7 @@ const SignUp = (props: {navigation: any}) => {
         </View>
 
         <View style={signInStyles.passwordTextInput}>
+        <View style={signInStyles.confirmPassInput}>
           <CustomTextInput
             placeholderText={'Confirm Password'}
             value={confirmPasswordText}
@@ -50,6 +52,12 @@ const SignUp = (props: {navigation: any}) => {
           onPress={() => props.navigation.navigate('Register')}
           buttonText={'Register'}
         />
+        <View style={{paddingTop: 50}}>
+          <StyledButton
+            onPress={() => props.navigation.navigate('Register')}
+            buttonText={'Register'}
+          />
+        </View>
       </Box>
     </SafeAreaView>
   );
