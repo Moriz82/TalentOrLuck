@@ -1,4 +1,3 @@
-import {Box, StatusBar, Text, View} from 'native-base';
 import {Box, Button, StatusBar, Text, View} from 'native-base';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
@@ -6,6 +5,7 @@ import {StyledButton} from '../../components/StyledButton'
 import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignUp.styles';
 import { CustomLinkedText } from '../../components/CustomLinkedText';
+import { ThirdPartyLoginButton } from '../../components/ThirdPartyLoginButton';
 
 const SignUp = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState();
@@ -29,7 +29,6 @@ const SignUp = (props: {navigation: any}) => {
           />
         </View>
 
-        <View style={signInStyles.passwordTextInput}>
         <View style={signInStyles.passwordInput}>
           <CustomTextInput
             placeholderText={'Enter Password'}
@@ -40,7 +39,6 @@ const SignUp = (props: {navigation: any}) => {
           />
         </View>
 
-        <View style={signInStyles.passwordTextInput}>
         <View style={signInStyles.confirmPassInput}>
           <CustomTextInput
             placeholderText={'Confirm Password'}
@@ -51,18 +49,22 @@ const SignUp = (props: {navigation: any}) => {
           />
         </View>
 
-        <StyledButton
-          onPress={() => props.navigation.navigate('Register')}
-          buttonText={'Register'}
-        />
         <View style={{paddingTop: 50}}>
           <StyledButton
             onPress={() => props.navigation.navigate('Register')}
             buttonText={'Register'}
           />
         </View>
+      
+        <View style={{padding: 10, paddingTop: 50}}>
+          <Text>Or register with</Text>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around', flex: 1}}>
+          <ThirdPartyLoginButton logoImage={require('../../assets/images/facebookLogo.png')} onPress={() => {}}/>
+          <ThirdPartyLoginButton logoImage={require('../../assets/images/googleLogo.png')} onPress={() => {}}/>
+        </View>
 
-        <View style={{padding: 20, width: '105%'}}>
+        <View style={{padding: 100, width: '125%'}}>
           <CustomLinkedText 
           displayText = 'Login'
           onPress={() => props.navigation.navigate('SignIn')}

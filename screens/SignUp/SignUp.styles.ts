@@ -13,13 +13,9 @@ const signUpStyles = StyleSheet.create({
   emailTextInput: {
     paddingTop: 30,
   },
-  passwordTextInput: {
   confirmPassInput: {
     paddingTop: 30,
-    paddingBottom: 30,
   },
-  forgotPasswordText: {
-    paddingBottom: 30,
   passwordInput: {
     paddingTop: 30,
   },
