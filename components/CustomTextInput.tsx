@@ -35,6 +35,8 @@ export function CustomTextInput(props: Props) {
         onChangeText={props.onChangeText}
         placeholderTextColor={'gray'}
         secureTextEntry={isPasswordSecure && props.isPassword}
+        keyboardType={props.isPassword ? 'default' : 'email-address'}
+        autoCapitalize={'none'}
       />
       {props.isPassword ? (
         <MaterialCommunityIcons
