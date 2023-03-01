@@ -1,9 +1,11 @@
 import {Box, StatusBar, Text, View} from 'native-base';
+import {Box, Button, StatusBar, Text, View} from 'native-base';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
 import {StyledButton} from '../../components/StyledButton'
 import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignUp.styles';
+import { CustomLinkedText } from '../../components/CustomLinkedText';
 
 const SignUp = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState();
@@ -11,6 +13,7 @@ const SignUp = (props: {navigation: any}) => {
   const [confirmPasswordText, setConfirmPasswordText] = useState();
 
   return (
+   <>
     <SafeAreaView style={signInStyles.safeAreaViewStyle}>
       <StatusBar barStyle={'light-content'} />
       <Box style={{padding: 10}}>
@@ -58,8 +61,16 @@ const SignUp = (props: {navigation: any}) => {
             buttonText={'Register'}
           />
         </View>
+
+        <View style={{padding: 20, width: '105%'}}>
+          <CustomLinkedText 
+          displayText = 'Login'
+          onPress={() => props.navigation.navigate('SignIn')}
+          />
+        </View>
       </Box>
     </SafeAreaView>
+  </>
   );
 };
 
