@@ -6,7 +6,7 @@ import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignIn.styles';
 import {CustomLinkedText} from '../../components/CustomLinkedText';
 import {ThirdPartyLoginButton} from '../../components/ThirdPartyLoginButton';
-import signInCheck from './SignInHandler';
+import {signInCheck} from './SignInHandler';
 
 const SignIn = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState('');
