@@ -1,8 +1,7 @@
-import { setUserdata, userdata } from "../../App";
+import {setUserdata} from '../../App';
 
-
-var database: any = {
-  'email': {
+const database: any = {
+  email: {
     username: 'email',
     email: 'email@email.com',
     password: 'password',
@@ -21,8 +20,11 @@ export function signInCheck(email: string, password: string): boolean {
   return false;
 }
 
-
-export function registerUser(email: string, password: string, confirmPassword: string): {didRegister: boolean, err: string} {
+export function registerUser(
+  email: string,
+  password: string,
+  confirmPassword: string,
+): {didRegister: boolean; err: string} {
   const username = email.split('@')[0];
 
   if (password === confirmPassword) {
@@ -30,12 +32,11 @@ export function registerUser(email: string, password: string, confirmPassword: s
       database[username] = {
         username: username,
         email: email,
-        password: password
+        password: password,
       };
-      return {didRegister: true, err: ""};
+      return {didRegister: true, err: ''};
     }
-    return {didRegister: false, err: "user is already registered"};
+    return {didRegister: false, err: 'user is already registered'};
   }
-  return {didRegister: false, err: "passwords do not match"};
-
+  return {didRegister: false, err: 'passwords do not match'};
 }

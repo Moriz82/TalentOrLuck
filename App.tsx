@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {extendTheme, NativeBaseProvider} from 'native-base';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -10,16 +10,20 @@ export var userdata = {
   email: '',
   password: '',
   isLoggedIn: false,
-}
+};
 
-export function setUserdata(username?: string, email?: string, password?: string) {
-  if (typeof username !== "undefined") {
+export function setUserdata(
+  username?: string,
+  email?: string,
+  password?: string,
+) {
+  if (typeof username !== 'undefined') {
     userdata.username = username;
   }
-  if (typeof email !== "undefined") {
+  if (typeof email !== 'undefined') {
     userdata.email = email;
   }
-  if (typeof password !== "undefined") {
+  if (typeof password !== 'undefined') {
     userdata.password = password;
   }
   userdata.isLoggedIn = true;
@@ -31,12 +35,11 @@ export function signOut() {
     email: '',
     password: '',
     isLoggedIn: false,
-  }
+  };
 }
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
-  const [username, setUsername] = useState('');
 
   // const colorTheme = {
   //   brand: {
