@@ -46,7 +46,7 @@ const SignIn = (props: {navigation: any}) => {
         </View>
 
         <StyledButton
-          onPress={() => console.log(signInCheck(emailText, passwordText))}
+          onPress={() => signInCheck(emailText, passwordText)}
           buttonText={'Login'}
         />
 
