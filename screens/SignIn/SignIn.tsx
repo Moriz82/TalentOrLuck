@@ -6,7 +6,7 @@ import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignIn.styles';
 import {CustomLinkedText} from '../../components/CustomLinkedText';
 import {ThirdPartyLoginButton} from '../../components/ThirdPartyLoginButton';
-import SignInCheck from './SignInBack';
+import signInCheck from './SignInHandler';
 
 const SignIn = (props: {navigation: any}) => {
   const [emailText, setEmailText] = useState('');
@@ -46,7 +46,7 @@ const SignIn = (props: {navigation: any}) => {
         </View>
 
         <StyledButton
-          onPress={() => console.log(SignInCheck(emailText, passwordText))}
+          onPress={() => console.log(signInCheck(emailText, passwordText))}
           buttonText={'Login'}
         />
 

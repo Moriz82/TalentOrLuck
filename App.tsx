@@ -5,6 +5,35 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
 
+export var userdata = {
+  username: '',
+  email: '',
+  password: '',
+  isLoggedIn: false,
+}
+
+export function setUserdata(username?: string, email?: string, password?: string) {
+  if (typeof username !== "undefined") {
+    userdata.username = username;
+  }
+  if (typeof email !== "undefined") {
+    userdata.email = email;
+  }
+  if (typeof password !== "undefined") {
+    userdata.password = password;
+  }
+  userdata.isLoggedIn = true;
+}
+
+export function signOut() {
+  userdata = {
+    username: '',
+    email: '',
+    password: '',
+    isLoggedIn: false,
+  }
+}
+
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
   const [username, setUsername] = useState('');
