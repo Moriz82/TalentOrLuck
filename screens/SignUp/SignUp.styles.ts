@@ -27,6 +27,9 @@ const signUpStyles = StyleSheet.create({
   registerNowText: {
     paddingTop: 30,
   },
+  errText: {
+    color: "red",
+  },
 });
 
 export default signUpStyles;

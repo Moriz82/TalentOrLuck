@@ -6,11 +6,14 @@ import {CustomTextInput} from '../../components/CustomTextInput';
 import signInStyles from './SignUp.styles';
 import {CustomLinkedText} from '../../components/CustomLinkedText';
 import {ThirdPartyLoginButton} from '../../components/ThirdPartyLoginButton';
+import {registerUser} from '../SignIn/SignInHandler';
+import signUpStyles from './SignUp.styles';
 
 const SignUp = (props: {navigation: any}) => {
-  const [emailText, setEmailText] = useState();
-  const [passwordText, setPasswordText] = useState();
-  const [confirmPasswordText, setConfirmPasswordText] = useState();
+  const [emailText, setEmailText] = useState('');
+  const [passwordText, setPasswordText] = useState('');
+  const [confirmPasswordText, setConfirmPasswordText] = useState('');
+  const [errText, setErrText] = useState('');
 
   return (
     <>
@@ -49,9 +52,23 @@ const SignUp = (props: {navigation: any}) => {
             />
           </View>
 
+          <View>
+            <Text style={signUpStyles.errText}>{errText}</Text>
+          </View>
+
           <View style={{paddingTop: 50}}>
             <StyledButton
-              onPress={() => props.navigation.navigate('Register')}
+              onPress={() => {
+                var msg = registerUser(
+                  emailText,
+                  passwordText,
+                  confirmPasswordText,
+                );
+                setErrText(msg.err);
+                if (msg.didRegister) {
+                  props.navigation.navigate('Login');
+                }
+              }}
               buttonText={'Register'}
             />
           </View>
