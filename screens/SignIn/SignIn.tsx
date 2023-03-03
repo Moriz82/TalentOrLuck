@@ -41,7 +41,14 @@ const SignIn = (props: {navigation: any}) => {
         <View style={signInStyles.forgotPasswordText}>
           <CustomLinkedText
             displayText={'Forgot Password?'}
-            onPress={props.navigation.navigate('ForgotPassword')}
+            onPress={() => props.navigation.navigate('ForgotPassword')}
+          />
+        </View>
+
+        <View style={signInStyles.forgotPasswordText}>
+          <CustomLinkedText
+            displayText={'GO TO TEAM SELECTION LOL'}
+            onPress={() => props.navigation.navigate('TeamSelection')}
           />
         </View>
 

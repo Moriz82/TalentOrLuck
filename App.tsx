@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
+import TeamSelection from './screens/TeamSelection/TeamSelection';
 
 export var userdata = {
   username: '',
@@ -82,6 +83,11 @@ function App(): JSX.Element {
           <Stack.Screen
             name="SignUp"
             component={SignUp}
+            options={{headerShown: false, title: ''}}
+          />
+          <Stack.Screen
+            name="TeamSelection"
+            component={TeamSelection}
             options={{headerShown: false, title: ''}}
           />
         </Stack.Navigator>
