@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { AppState } from "react-native";
 import {extendTheme, NativeBaseProvider} from 'native-base';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
 import TeamSelection from './screens/TeamSelection/TeamSelection';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export var userdata = {
   username: '',
@@ -39,7 +41,50 @@ export function signOut() {
   };
 }
 
-function App(): JSX.Element {
+const storeData = async () => {
+  try {
+    await AsyncStorage.setItem("userdata", JSON.stringify(userdata));
+  } catch (error) {
+    console.log("error while storing data", error);
+  }
+};
+
+export const fetchData = async () => {
+  try {
+    userdata = JSON.parse(await AsyncStorage.getItem("userdata") as string);
+  } catch (error) {
+    console.log("error while fetching data", error);
+  }
+}
+
+
+
+export function App(): JSX.Element {
+  let dataFetched = false;
+  const appState = useRef(AppState.currentState);
+  const [appStateVisible, setAppStateVisible] = useState(appState.current);
+
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', async nextAppState => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+        if (!dataFetched){await fetchData(); dataFetched = true;}
+        else {await storeData();}
+      }
+
+      appState.current = nextAppState;
+      setAppStateVisible(appState.current);
+      if (!dataFetched){await fetchData(); dataFetched = true;}
+      else {await storeData();}
+    });
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   const Stack = createNativeStackNavigator();
 
   // const colorTheme = {
@@ -95,5 +140,3 @@ function App(): JSX.Element {
     </NativeBaseProvider>
   );
 }
-
-export default App;
