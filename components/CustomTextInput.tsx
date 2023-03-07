@@ -19,17 +19,16 @@ export function CustomTextInput(props: Props) {
         borderRadius: 10,
         flexDirection: 'row',
         backgroundColor: 'white',
-        padding: 10,
         justifyContent: 'space-between',
       }}>
       <MaterialCommunityIcons
         name={props.iconName}
         color="gray"
         size={25}
-        style={{paddingRight: 5}}
+        style={{paddingRight: 5, paddingTop: "3%"}}
       />
       <TextInput
-        style={{flex: 1, height: 30, fontFamily: 'Urbanist'}}
+        style={{flex: 1, height: "auto", fontFamily: 'Urbanist'}}
         placeholder={props.placeholderText}
         defaultValue={props.value}
         onChangeText={props.onChangeText}
@@ -41,6 +40,7 @@ export function CustomTextInput(props: Props) {
       {props.isPassword ? (
         <MaterialCommunityIcons
           name={isPasswordSecure ? 'eye-off' : 'eye'}
+          style={{paddingTop: "3%"}}
           size={28}
           color="gray"
           onPress={() => {

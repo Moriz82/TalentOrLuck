@@ -71,11 +71,11 @@ const SignIn = (props: {navigation: any}) => {
               paddingTop: 20,
             }}>
             <ThirdPartyLoginButton
-              logoImage={require('../../assets/images/facebookLogo.png')}
+              logoImage={require('../../assets/images/facebookLogo.jpg')}
               onPress={() => {}}
             />
             <ThirdPartyLoginButton
-              logoImage={require('../../assets/images/googleLogo.png')}
+              logoImage={require('../../assets/images/googleLogo.jpg')}
               onPress={() => {}}
             />
           </View>
