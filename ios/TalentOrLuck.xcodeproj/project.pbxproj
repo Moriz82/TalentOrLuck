@@ -57,20 +57,6 @@
 			remoteGlobalIDString = 94DDAC5C1F3D024300EED511;
 			remoteInfo = "RNSVG-tvOS";
 		};
-		039C35D129A9246700EAB86F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 039C35CC29A9246600EAB86F /* RNSVG.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CF68AC11AF0540F00FF9E5C;
-			remoteInfo = RNSVG;
-		};
-		039C35D329A9246700EAB86F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 039C35CC29A9246600EAB86F /* RNSVG.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 94DDAC5C1F3D024300EED511;
-			remoteInfo = "RNSVG-tvOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +65,6 @@
 		00E356F21AD99517003FC87E /* TalentOrLuckTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalentOrLuckTests.m; sourceTree = "<group>"; };
 		0168EA16EC5D42DFAFE2F1FB /* Urbanist-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Medium.ttf"; path = "../assets/fonts/Urbanist-Medium.ttf"; sourceTree = "<group>"; };
 		039C35C329A9245E00EAB86F /* RNSVG.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/apple/RNSVG.xcodeproj"; sourceTree = "<group>"; };
-		039C35CC29A9246600EAB86F /* RNSVG.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/apple/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		039C35D529A924CE00EAB86F /* module */ = {isa = PBXFileReference; lastKnownFileType = folder; name = module; path = "../node_modules/react-native-svg/lib/module"; sourceTree = "<group>"; };
 		0DF23CE2AC754C82B0C42C68 /* Urbanist-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Italic.ttf"; path = "../assets/fonts/Urbanist-Italic.ttf"; sourceTree = "<group>"; };
 		11DE9BF37EDE42B5B4C03D69 /* Urbanist-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-MediumItalic.ttf"; path = "../assets/fonts/Urbanist-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -161,15 +146,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		039C35CD29A9246600EAB86F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				039C35D229A9246700EAB86F /* libRNSVG.a */,
-				039C35D429A9246700EAB86F /* libRNSVG-tvOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* TalentOrLuck */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +174,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				039C35CC29A9246600EAB86F /* RNSVG.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -343,10 +318,6 @@
 					ProductGroup = 039C35C429A9245E00EAB86F /* Products */;
 					ProjectRef = 039C35C329A9245E00EAB86F /* RNSVG.xcodeproj */;
 				},
-				{
-					ProductGroup = 039C35CD29A9246600EAB86F /* Products */;
-					ProjectRef = 039C35CC29A9246600EAB86F /* RNSVG.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -369,20 +340,6 @@
 			fileType = archive.ar;
 			path = "libRNSVG-tvOS.a";
 			remoteRef = 039C35CA29A9245E00EAB86F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		039C35D229A9246700EAB86F /* libRNSVG.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNSVG.a;
-			remoteRef = 039C35D129A9246700EAB86F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		039C35D429A9246700EAB86F /* libRNSVG-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libRNSVG-tvOS.a";
-			remoteRef = 039C35D329A9246700EAB86F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
