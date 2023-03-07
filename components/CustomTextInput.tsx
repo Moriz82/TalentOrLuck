@@ -28,7 +28,7 @@ export function CustomTextInput(props: Props) {
         style={{paddingRight: 5, paddingTop: "3%"}}
       />
       <TextInput
-        style={{flex: 1, height: "auto", fontFamily: 'Urbanist'}}
+        style={{flex: 1, height: "auto", fontFamily: 'Urbanist', color:"black"}}
         placeholder={props.placeholderText}
         defaultValue={props.value}
         onChangeText={props.onChangeText}
